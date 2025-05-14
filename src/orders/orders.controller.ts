@@ -1,22 +1,22 @@
-import { Controller } from '@nestjs/common';
-import { Get, Post, Put, Delete, Body, Param } from '@nestjs/common';
+import { Controller, Get, Patch, Body, Param } from '@nestjs/common';
+import { OrdersService } from './orders.service';
+
 @Controller('orders')
 export class OrdersController {
   constructor(private readonly ordersService: OrdersService) {}
 
   @Get()
-  findAll(){
+  findAll() {
     return this.ordersService.findAll();
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string){
+  findOne(@Param('id') id: string) {
     return this.ordersService.findOne(+id);
   }
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateOrderDto: UpdateOrderDto) {
-    return this.ordersService.update(+id, updateOrderDto);
+
+  @Patch(':id/estado')
+  updateEstado(@Param('id') id: string, @Body() body: any) {
+    return this.ordersService.actualizarEstado(+id, body);
   }
-
-
 }
