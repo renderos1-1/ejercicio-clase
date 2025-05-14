@@ -9,10 +9,12 @@ import { LibrosController } from './libros/libros.controller';
 import { LibrosService } from './libros/libros.service';
 import { OrdersController } from './orders/orders.controller';
 import { OrdersService } from './orders/orders.service';
+import { AsistenciasController } from './asistencias/asistencias.controller';
+import { AsistenciasService } from './asistencias/asistencias.service';
 
 @Module({
   imports: [],
-  controllers: [AppController, TicketsController, VideogamesController, LibrosController, OrdersController],
-  providers: [AppService, TicketsService, VideogamesService, LibrosService, OrdersService],
+  controllers: [AppController, TicketsController, VideogamesController, LibrosController, OrdersController, AsistenciasController],
+  providers: [AppService, TicketsService, VideogamesService, LibrosService, OrdersService, AsistenciasService],
 })
 export class AppModule {}
