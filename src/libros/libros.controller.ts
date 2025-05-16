@@ -10,4 +10,3 @@ export class LibrosController {
     return this.librosService.buscarPorPalabraClave(palabra);
   }
 }
-
